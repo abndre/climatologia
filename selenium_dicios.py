@@ -28,8 +28,11 @@ def gettemperatura(link):
                 value = j.string
                 dicio[key].append(value)
         except:
+            #TODO tratar erro
+            #Possivel mais erros
             pass
 
+    #criando chave valor
     dicio2 = {}
     for key, value in dicio.items():
         dicio2[key]={'min':value[0],'max':value[1], 'pres':value[2]}
