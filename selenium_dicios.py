@@ -40,16 +40,12 @@ def gettemperatura(link):
 
 for state in listastat:
     listacities_dicio = diciostate_cities[state]
-    #print(listacities_dicio)
     for key, value in listacities_dicio.items():
         id  = (value)
         city=(remover_acentos(key).lower())
         city=city.replace(' ','')
         city=city.replace("'",'')
-        #https://www.climatempo.com.br/climatologia/5727/olhod'aguadocasado-al
-        #print(diciostat_abrev(state).lower())
         statelower=(diciostat_abrev[state].lower())
-        #print(key,value)
         #e.g: 'https://www.climatempo.com.br/climatologia/2/santos-sp'
         link = 'https://www.climatempo.com.br/climatologia/{}/{}-{}'.format(id,city,statelower)
         gettemperatura(link)

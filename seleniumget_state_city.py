@@ -28,7 +28,6 @@ options = [x for x in z.find_elements_by_tag_name("option")]
 diciostat_abrev = {}
 for element in options:
     diciostat_abrev[element.text]=element.get_attribute("value")
-    #print(element.get_attribute("value"),element.text)
 print(diciostat_abrev)
 
 #Show all stats
@@ -55,6 +54,5 @@ for value in llistastat:
 
 #Show dicio with stat city
 print(dicio_stat_city)
-#browser.quit()
 
 browser.quit()
