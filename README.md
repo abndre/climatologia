@@ -30,6 +30,9 @@ Também não foi falado o formato de saída, então fiz uma lista de dicionário
 
 Enfim como funciona.
 
+# Ambiente de teste
+Utilizei o Linux Mint 19 para teste, ATOM como IDE, fiz um ambiente virtual e testei localmente, instalei chromedriver.
+
 # Como testar
 ## Primeiro
 Rodar o arquivo seleniumget_state_city.py obter os valores de output salvar no arquivo output.py. Esta etapa não automatizei, pois não sei se é foco do desafio
