@@ -23,6 +23,8 @@ time.sleep(5)
 liststat=browser.find_element_by_id("sel-state-geo")
 llistastat = liststat.text.split('\n')
 
+#creat dicio with stat and dicio and abre
+# like: 'Acre': 'AC', 'Alagoas': 'AL',
 z=browser.find_element_by_id("sel-state-geo")
 options = [x for x in z.find_elements_by_tag_name("option")]
 diciostat_abrev = {}
@@ -30,7 +32,7 @@ for element in options:
     diciostat_abrev[element.text]=element.get_attribute("value")
 print(diciostat_abrev)
 
-#Show all stats
+#Show all stats like:  'Acre', 'Alagoas', 'Amazonas',
 print(llistastat)
 
 
@@ -44,6 +46,7 @@ for value in llistastat:
     time.sleep(5)
 
     z=browser.find_element_by_id("sel-city-geo")
+    #TODO make function
     options = [x for x in z.find_elements_by_tag_name("option")]
     diciocity_number = {}
     for index, element in enumerate(options):
@@ -53,6 +56,7 @@ for value in llistastat:
     dicio_stat_city[value]=diciocity_number
 
 #Show dicio with stat city
+#like: 'Acre': {'Acrelândia': '6377',
 print(dicio_stat_city)
 
 browser.quit()

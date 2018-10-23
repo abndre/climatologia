@@ -6,13 +6,17 @@ import requests
 #outro arquivo
 from output import diciostat_abrev, diciostate_cities, listastat
 
+#global list with value
+#like: [{'cidade': 'Acrelândia', 'estado': 'AC'}, {'Janeiro': {'min': '23°', 'max': '29°', 'pres': '298'}, 'Fevereiro': {'min': '23°', 'max': '28°', 'pres': '286'}, 'Março': {'min': '23°', 'max': '28°', 'pres': '290'}, 'Abril': {'min': '22°', 'max': '29°', 'pres': '210'}, 'Maio': {'min': '21°', 'max': '29°', 'pres': '107'}, 'Junho': {'min': '20°', 'max': '31°', 'pres': '38'}, 'Julho': {'min': '20°', 'max': '32°', 'pres': '24'}, 'Agosto': {'min': '22°', 'max': '35°', 'pres': '42'}, 'Setembro': {'min': '24°', 'max': '35°', 'pres': '97'}, 'Outubro': {'min': '23°', 'max': '33°', 'pres': '169'}, 'Novembro': {'min': '23°', 'max': '31°', 'pres': '233'}, 'Dezembro': {'min': '23°', 'max': '29°', 'pres': '252'}}]
+
 lista = []
 
+#remove unicodes
 from unicodedata import normalize
 def remover_acentos(txt):
     return normalize('NFKD', txt).encode('ASCII', 'ignore').decode('ASCII')
 
-
+#get values from link
 def gettemperatura(link):
     print(link)
     #link = 'https://www.climatempo.com.br/climatologia/2/santos-sp'
